@@ -1,5 +1,5 @@
 #labels Featured,Phase-Design,Phase-Implementation
-[http://www.vim.org/scripts/script.php?script_id=1714 Script# 1714]: Tail Bundle : Yet another tail -f plugin
+#[http://www.vim.org/scripts/script.php?script_id=1714 Script# 1714]: Tail Bundle : Yet another tail -f plugin
 
 = Details =
 
@@ -13,6 +13,7 @@ Last not least I use the new Vim 7.0 autoload feature so this script should load
   * [http://vim-scripts.googlecode.com/svn/trunk/1714%20Tail%20Bundle Subversion]
 
 
+ 
  
  
  
