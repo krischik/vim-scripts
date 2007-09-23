@@ -1,0 +1,10 @@
+#summary Rainbow Parenthsis Bundle : Colors Parenthsis
+
+= Details =
+
+Based on the original rainbow_parenthsis from john gilmore but enhanced for gui mode.
+
+= Links =
+
+  * [http://www.vim.org/scripts/script.php?script_id=1561 Download Script #1561]
+  * [http://vim-scripts.googlecode.com/svn/trunk/1561%20Rainbow%20Parenthsis%20Bundle/ Subversion] 
