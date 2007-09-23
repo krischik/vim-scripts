@@ -1,4 +1,5 @@
 #summary Modelines Bundle : Insert Modelines from current settings
+#labels Featured,Phase-Design,Phase-Implementation
 
 Inserts two modelines with the currently active filetype and tabulator settings.
 
@@ -14,6 +15,7 @@ Can be easily exdended for more settings - just as you want it.
 
   * [http://www.vim.org/scripts/script.php?script_id=1352 Download Script #1352]
   * [http://vim-scripts.googlecode.com/svn/trunk/1352%20Modelines%20Bundle/ Subversion] 
+ 
  
  
  
