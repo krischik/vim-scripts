@@ -1,4 +1,5 @@
-#summary Tail Bundle: Yet another tail -f plugin.
+#summary plugin/fonts.vim : Multi OS Font Plugin
+#labels Featured,Phase-Design,Phase-Implementation
 
 = Details =
 
@@ -10,3 +11,4 @@ You can easily expand the plugin for more OS's or fonts.
 
   * [http://www.vim.org/scripts/script.php?script_id=1337 Download Script #1337]
   * [http://vim-scripts.googlecode.com/svn/trunk/1337%20Multi%20OS%20Font%20Plugin/ Subversion] 
+ 
