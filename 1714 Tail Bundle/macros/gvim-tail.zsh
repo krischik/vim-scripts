@@ -1,14 +1,14 @@
 #!/bin/zsh
 #------------------------------------------------------------------------------
 #  Description: Works like "tail -f" .
-#          $Id: gvim-tail.zsh,v 1.1 2007/09/17 10:53:07 krischikm Exp $
+#          $Id$
 #   Maintainer: Martin Krischik (krischik@users.sourceforge.net)
 #               Jason Heddings (vim at heddway dot com)
-#      $Author: krischikm $
-#        $Date: 2007/09/17 10:53:07 $
+#      $Author$
+#        $Date$
 #      Version: 3.0
-#    $Revision: 1.1 $
-#     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/tail.vim $
+#    $Revision$
+#     $HeadURL$
 #      History: 22.09.2006 MK Improve for vim 7.0
 #               15.10.2006 MK Bram's suggestion for runtime integration
 #		05.11.2006 MK Bram suggested to save on spaces

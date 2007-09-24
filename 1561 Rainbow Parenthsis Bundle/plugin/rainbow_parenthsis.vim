@@ -1,14 +1,14 @@
 "------------------------------------------------------------------------------
 "  Description: Rainbow colors for parenthsis
-"          $Id: rainbow_parenthsis.vim 764 2007-09-10 17:55:12Z krischik $
+"          $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer: Martin Krischik
 "               John Gilmore
-"      $Author: krischik $
-"        $Date: 2007-09-10 19:55:12 +0200 (Mo, 10 Sep 2007) $
+"      $Author$
+"        $Date$
 "      Version: 3.0
-"    $Revision: 764 $
-"     $HeadURL: http://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/rainbow_parenthsis.vim $
+"    $Revision$
+"     $HeadURL$
 "      History: 24.05.2006 MK Unified Headers
 "               15.10.2006 MK Bram's suggestion for runtime integration
 "               06.09.2007 LH Buffer friendly (can be used in different buffers),

@@ -1,13 +1,13 @@
 "------------------------------------------------------------------------------
 "  Description: Options setable by the rainbow_parenthsis plugin
-"	   $Id: rainbow_parenthsis_options.vim 773 2007-09-17 08:58:57Z krischik $
+"	   $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer:	Martin Krischik (krischik@users.sourceforge.net)
-"      $Author: krischik $
-"	 $Date: 2007-09-17 10:58:57 +0200 (Mo, 17 Sep 2007) $
+"      $Author$
+"	 $Date$
 "      Version: 3.0
-"    $Revision: 773 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/rainbow_parenthsis_options.vim $
+"    $Revision$
+"     $HeadURL$
 "      History:	17.11.2006 MK rainbow_parenthsis_Options
 "               01.01.2007 MK Bug fixing
 "	 Usage: copy content into your .vimrc and change options to your
