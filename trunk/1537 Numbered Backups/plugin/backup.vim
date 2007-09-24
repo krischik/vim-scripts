@@ -1,13 +1,13 @@
 "-------------------------------------------------------------------------------
 "  Description: Use VMS style versioned backup
-"          $Id: backup.vim,v 1.1 2007/09/10 09:31:46 krischikm Exp $
+"          $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer: Martin Krischik
-"      $Author: krischikm $
-"        $Date: 2007/09/10 09:31:46 $
+"      $Author$
+"        $Date$
 "      Version: 2.2
-"    $Revision: 1.1 $
-"     $HeadURL: http://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/backup.vim $
+"    $Revision$
+"     $HeadURL$
 "      History: 15.05.2006 MK Fix "Press ENTER ..." on vms systems
 "               15.05.2006 MK Fix set backupdir on non vms systems
 "		24.05.2006 MK Unified Headers

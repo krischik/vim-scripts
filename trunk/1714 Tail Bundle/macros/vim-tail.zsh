@@ -1,13 +1,13 @@
 #!/bin/zsh
 #------------------------------------------------------------------------------
 #  Description: Works like "tail -f" .
-#          $Id: tail.vim,v 1.1 2007/09/10 09:31:47 krischikm Exp $
+#          $Id$
 #   Maintainer: Martin Krischik (krischik@users.sourceforge.net)
-#      $Author: krischikm $
-#        $Date: 2007/09/10 09:31:47 $
+#      $Author$
+#        $Date$
 #      Version: 3.0
-#    $Revision: 1.1 $
-#     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/tail.vim $
+#    $Revision$
+#     $HeadURL$
 #      History: 17.11.2007 Now with Startup Scripts.
 #    Help Page: tail.txt
 #------------------------------------------------------------------------------

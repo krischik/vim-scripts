@@ -1,13 +1,13 @@
 "------------------------------------------------------------------------------
 "  Description: Options setable by the Modeline bundle
-"	   $Id: modelines_options.vim 775 2007-09-17 10:51:18Z krischik $
+"	   $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer:	Martin Krischik
-"      $Author: krischik $
-"	 $Date: 2007-09-17 12:51:18 +0200 (Mo, 17 Sep 2007) $
+"      $Author$
+"	 $Date$
 "      Version: 2.0
-"    $Revision: 775 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/modelines_options.vim $
+"    $Revision$
+"     $HeadURL$
 "      History:	17.09.2007 MK change to bundle use NERD_Commenter when
 "		              available  
 "	 Usage: copy content into your .vimrc and change options to your

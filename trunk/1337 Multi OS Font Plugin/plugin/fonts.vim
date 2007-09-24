@@ -1,13 +1,13 @@
 "-------------------------------------------------------------------------------
 "  Description: Quick Font changer
-"          $Id: fonts.vim,v 1.1 2007/09/10 09:31:47 krischikm Exp $
+"          $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer: Martin Krischik
-"      $Author: krischikm $
-"        $Date: 2007/09/10 09:31:47 $
+"      $Author$
+"        $Date$
 "      Version: 1.5
-"    $Revision: 1.1 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/plugin/fonts.vim $
+"    $Revision$
+"     $HeadURL$
 "      History: 01.11.2006 MK Sun Solaris Support 
 "	 Usage: copy to plugin directory.
 "-------------------------------------------------------------------------------
