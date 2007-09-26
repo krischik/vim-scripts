@@ -16,3 +16,6 @@ IMORTANT: Creating this plugin was only possible because vim 7 offers new file m
   * [http://www.vim.org/scripts/script.php?script_id=1537 Download Script #1537]
   * [http://vim-scripts.googlecode.com/svn/trunk/1537%20Numbered%20Backups/ Subversion] 
  
+= Maintainer =
+
+  * [http://www.vim.org/account/profile.php?user_id=7818 Martin Krischik]
