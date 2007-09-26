@@ -1,4 +1,4 @@
-#summary Rainbow Parenthsis Bundle : Colors Parenthsis
+#summary Rainbow Parenthesis Bundle : Colors Parenthsis
 #labels Featured,Phase-Design,Phase-Implementation
 
 = Details =
