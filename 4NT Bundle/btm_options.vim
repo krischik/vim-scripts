@@ -32,7 +32,7 @@ finish " 1}}}
 " Section: Vimball options {{{1
 
 :set noexpandtab fileformat=unix encoding=utf-8
-:.+2,.+5 MkVimball btm-2.0.vba
+:37,40 MkVimball btm-1.0.vba
 
 btm_options.vim
 autoload\btm.vim
@@ -44,7 +44,7 @@ syntax\btm.vim
 " Section: Tar options {{{1
 
 tar --create --bzip2          \
-   --file="btm-2.0.tar.bz2"   \
+   --file="btm-1.0.tar.bz2"   \
    btm_options.vim            \
    autoload\btm.vim           \
    ftplugin\btm.vim           \
