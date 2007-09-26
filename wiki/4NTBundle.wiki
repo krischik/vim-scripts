@@ -8,7 +8,7 @@ Updates both the file type and syntax plug-in for btm (Batch to Memory - 4NT, Ta
 = Links =
 
   * [http://www.vim.org/scripts/script.php?script_id=2029 Download Script #2029]
-  * [http://vim-scripts.googlecode.com/svn/trunk/1561%20Rainbow%20Parenthsis%20Bundle/ Subversion]
+  * [http://vim-scripts.googlecode.com/svn/trunk/2029%204NT%20Bundle Subversion]
 
 = Maintainer =
 
