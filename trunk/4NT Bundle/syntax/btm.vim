@@ -1,16 +1,17 @@
 "------------------------------------------------------------------------------
-"  Description: Vim Vim syntax file
+"  Description: Vim syntax file for Btm
 "     Language: BTM (Batch to Memory - 4NT, TakeCommand Script)
-"	   $Id$
+"          $Id$
+"    Copyright: Copyright (C) 2007 Martin Krischik
 "   Maintainer: Martin Krischik <krischik@users.sourceforge.net>
 "               John Leo Spetz <jls11@po.cwru.edu>
 "      $Author$
-"	 $Date$
-"      Version: 4.5
+"        $Date$
+"      Version: 1.0
 "    $Revision$
 "     $HeadURL$
-"      History: 08.07.2007 MK.
-"    Help Page: ft-ada-plugin
+"      History: 22.11.2007 MK A new Btm Filetype Bundle
+"    Help Page: ft-btm-plugin
 "------------------------------------------------------------------------------
 " Vim syntax file
 
@@ -30,134 +31,148 @@ let b:current_syntax = "btm"
 
 syntax case ignore
 
-syntax keyword btmStatement	call off
-syntax keyword btmConditional	if iff endiff then else elseiff not errorlevel
-syntax keyword btmConditional	gt lt eq ne ge le
-syntax match btmConditional transparent    "\.\i\+\." contains=btmDotBoolOp
-syntax keyword btmDotBoolOp contained      and or xor
-syntax match btmConditional	"=="
-syntax match btmConditional	"!="
-syntax keyword btmConditional	defined errorlevel exist isalias
-syntax keyword btmConditional	isdir direxist isinternal islabel
-syntax keyword btmRepeat		for in do enddo
+syntax match    btmOperator     transparent    "\.\i\+\." contains=btmDotBoolOp
+syntax keyword  btmDotBoolOp    contained      and or xor
+syntax match    btmOperator     "=="
+syntax match    btmOperator     "!="
 
-syntax keyword btmTodo contained	TODO
+syntax keyword btmTodo contained        TODO
 
 " String
-syntax cluster btmVars contains=btmVariable,btmArgument,btmBIFMatch
-syntax region  btmString	start=+"+  end=+"+ contains=@btmVars
-syntax match btmNumber     "\<\d\+\>"
+syntax cluster  btmVars         contains=btmVariable,btmArgument,btmBIFMatch
+syntax region   btmString       start=+"+  end=+"+ contains=@btmVars
+syntax match    btmNumber       "\<\d\+\>"
 
-"syntax match  btmIdentifier	"\<\h\w*\>"
+if exists ('g:btm_highlight_identifier')
+    syntax match  btmIdentifier "\<\h\w*\>"
+endif
 
-" If you don't like tabs
-"syntax match btmShowTab "\t"
-"syntax match btmShowTabc "\t"
-"syntax match  btmComment		"^\ *rem.*$" contains=btmTodo,btmShowTabc
+if exists ('g:btm_highlight_tabs')
+    syntax match btmShowTab     "\t"
+    syntax match btmShowTabc    "\t"
+    syntax match btmComment     "^\ *rem.*$" contains=btmTodo,btmShowTabc
+    syntax match btmComment     "^\ *::.*$" contains=btmTodo,btmShowTabc
+else
+    syntax match btmComment     "^\ *rem.*$" contains=btmTodo
+    syntax match btmComment     "^\ *::.*$" contains=btmTodo
+endif
 
-" Some people use this as a comment line
-" In fact this is a Label
-"syntax match btmComment		"^\ *:\ \+.*$" contains=btmTodo
+if exists ('g:btm_highlight_unusual_comments')
+    " Some people use this as a comment line. In fact this is a Label!
+    syntax match btmComment     "^\ *:\ \+.*$" contains=btmTodo
+endif
 
-syntax match btmComment		"^\ *rem.*$" contains=btmTodo
-syntax match btmComment		"^\ *::.*$" contains=btmTodo
+syntax match btmLabelMark       "^\ *:[0-9a-zA-Z_\-]\+\>"
+syntax match btmLabelMark       "goto [0-9a-zA-Z_\-]\+\>"lc=5
+syntax match btmLabelMark       "gosub [0-9a-zA-Z_\-]\+\>"lc=6
 
-syntax match btmLabelMark		"^\ *:[0-9a-zA-Z_\-]\+\>"
-syntax match btmLabelMark		"goto [0-9a-zA-Z_\-]\+\>"lc=5
-syntax match btmLabelMark		"gosub [0-9a-zA-Z_\-]\+\>"lc=6
+" syntax match btmCmdDivider    ">[>&][>&]\="
+syntax match btmCmdDivider      ">[>&]*"
+syntax match btmCmdDivider      ">>&>"
+syntax match btmCmdDivider      "|&\="
+syntax match btmCmdDivider      "%+"
+syntax match btmCmdDivider      "\^"
 
-" syntax match btmCmdDivider ">[>&][>&]\="
-syntax match btmCmdDivider ">[>&]*"
-syntax match btmCmdDivider ">>&>"
-syntax match btmCmdDivider "|&\="
-syntax match btmCmdDivider "%+"
-syntax match btmCmdDivider "\^"
-
-syntax region btmEcho start="echo" skip="echo" matchgroup=btmCmdDivider end="%+" end="$" end="|&\=" end="\^" end=">[>&]*" contains=@btmEchos oneline
-syntax cluster btmEchos contains=@btmVars,btmEchoCommand,btmEchoParam
-syntax keyword btmEchoCommand contained	echo echoerr echos echoserr
-syntax keyword btmEchoParam contained	on off
+syntax region   btmEcho         start="echo" skip="echo" matchgroup=btmCmdDivider end="%+" end="$" end="|&\=" end="\^" end=">[>&]*" contains=@btmEchos oneline
+syntax cluster  btmEchos        contains=@btmVars,btmEchoCommand,btmEchoParam
+for b:Item in g:btm#Keywords
+    if b:Item['kind'] == "e"
+        execute "syntax keyword btmEchoCommand  contained" . b:Item['word']
+    endif
+endfor
+syntax keyword  btmEchoParam    contained       on off
 
 " this is also a valid Label. I don't use it.
-"syntax match btmLabelMark		"^\ *:\ \+[0-9a-zA-Z_\-]\+\>"
+"syntax match btmLabelMark      "^\ *:\ \+[0-9a-zA-Z_\-]\+\>"
 
 " //Environment variable can be expanded using notation %var in 4DOS
-syntax match btmVariable		"%[0-9a-z_\-]\+" contains=@btmSpecialVars
+syntax match btmVariable                "%[0-9a-z_\-]\+" contains=@btmSpecialVars
 " //Environment variable can be expanded using notation %var%
-syntax match btmVariable		"%[0-9a-z_\-]*%" contains=@btmSpecialVars
+syntax match btmVariable                "%[0-9a-z_\-]*%" contains=@btmSpecialVars
 " //The following are special variable in 4DOS
-syntax match btmVariable		"%[=#]" contains=@btmSpecialVars
-syntax match btmVariable		"%??\=" contains=@btmSpecialVars
+syntax match btmVariable                "%[=#]" contains=@btmSpecialVars
+syntax match btmVariable                "%??\=" contains=@btmSpecialVars
 " //Environment variable can be expanded using notation %[var] in 4DOS
-syntax match btmVariable		"%\[[0-9a-z_\-]*\]"
+syntax match btmVariable                "%\[[0-9a-z_\-]*\]"
 " //After some keywords next word should be an environment variable
-syntax match btmVariable		"defined\s\i\+"lc=8
-syntax match btmVariable		"set\s\i\+"lc=4
+syntax match btmVariable                "defined\s\i\+"lc=8
+syntax match btmVariable                "set\s\{}\i\+"lc=4
 " //Parameters to batchfiles take the format %<digit>
-syntax match btmArgument		"%\d\>"
+syntax match btmArgument                "%\d\>"
 " //4DOS allows format %<digit>& meaning batchfile parameters digit and up
-syntax match btmArgument		"%\d\>&"
+syntax match btmArgument                "%\d\>&"
 " //Variable used by FOR loops sometimes use %%<letter> in batchfiles
-syntax match btmArgument		"%%\a\>"
+syntax match btmArgument                "%%\a\>"
 
 " //Show 4DOS built-in functions specially
 syntax match btmBIFMatch "%@\w\+\["he=e-1 contains=btmBuiltInFunc
+for b:Item in g:btm#Keywords
+   if b:Item['kind'] == "f"
+      execute "syntax keyword btmBuiltInFunc contained" . b:Item['word']
+    endif
+endfor
 
 syntax cluster btmSpecialVars contains=btmBuiltInVar,btmSpecialVar
 
 " //Show specialized variables specially
-" syntax match btmSpecialVar contained	"+"
-syntax match btmSpecialVar contained	"="
-syntax match btmSpecialVar contained	"#"
-syntax match btmSpecialVar contained	"??\="
+" syntax match btmSpecialVar contained  "+"
+syntax match btmSpecialVar contained    "="
+syntax match btmSpecialVar contained    "#"
+syntax match btmSpecialVar contained    "??\="
 
-for b:Item in g:wlsadmin#Keywords
-   if b:Item['kind'] == "f"
-      execute "syntax keyword btmBuiltInFunc contained . b:Item['word']
-   endif
-   if b:Item['kind'] == "k"
-      execute "syntax keyword btmCommand "      . b:Item['word']
-   endif
-   if b:Item['kind'] == "s"
-      execute "syntax keyword btmSpecialVar "   . b:Item['word']
-   endif
-   if b:Item['kind'] == "v"
-      execute "syntax keyword btmBuiltInVar "   . b:Item['word']
-   endif
+for b:Item in g:btm#Keywords
+    if b:Item['kind'] == "c"
+        execute "syntax keyword btmConditional "        . b:Item['word']
+    elseif  b:Item['kind'] == "r"
+        execute "syntax keyword btmRepeat "             . b:Item['word']
+    elseif b:Item['kind'] == "o"
+        execute "syntax keyword btmOperator "           . b:Item['word']
+    elseif b:Item['kind'] == "s"
+        execute "syntax keyword btmSpecialVar "         . b:Item['word']
+    elseif b:Item['kind'] == "v"
+        execute "syntax keyword btmBuiltInVar "         . b:Item['word']
+    elseif b:Item['kind'] == "k"
+        execute "syntax keyword btmCommand "            . b:Item['word']
+    endif
 endfor
 
 " //Commands in 4DOS and/or DOS
-syntax match btmCommand	"\s?"
-syntax match btmCommand	"^?"
+syntax match btmCommand "\s?"
+syntax match btmCommand "^?"
 
-highlight def link btmLabel		Special
-highlight def link btmLabelMark		Special
-highlight def link btmCmdDivider	Special
-highlight def link btmConditional	btmStatement
-highlight def link btmDotBoolOp		btmStatement
-highlight def link btmRepeat		btmStatement
-highlight def link btmEchoCommand	btmStatement
-highlight def link btmEchoParam		btmStatement
-highlight def link btmStatement		Statement
-highlight def link btmTodo		Todo
-highlight def link btmString		String
-highlight def link btmNumber		Number
-highlight def link btmComment		Comment
-highlight def link btmArgument		Identifier
-highlight def link btmVariable		Identifier
-highlight def link btmEcho		String
-highlight def link btmBIFMatch		btmStatement
-highlight def link btmBuiltInFunc	btmStatement
-highlight def link btmBuiltInVar	btmStatement
-highlight def link btmSpecialVar	btmStatement
-highlight def link btmCommand		btmStatement
+highlight def link btmOperator          Operator
+highlight def link btmLabel             Label
+highlight def link btmLabelMark         Special
+highlight def link btmCmdDivider        Special
+highlight def link btmConditional       Conditional
+highlight def link btmDotBoolOp         Operator
+highlight def link btmRepeat            Repeat
+highlight def link btmEchoCommand       btmStatement
+highlight def link btmEchoParam         btmStatement
+highlight def link btmStatement         Statement
+highlight def link btmTodo              Todo
+highlight def link btmString            String
+highlight def link btmNumber            Number
+highlight def link btmComment           Comment
+highlight def link btmArgument          Identifier
+highlight def link btmVariable          Identifier
+highlight def link btmEcho              String
+highlight def link btmBIFMatch          btmStatement
+highlight def link btmBuiltInFunc       Function
+highlight def link btmBuiltInVar        Identifier
+highlight def link btmSpecialVar        Special
+highlight def link btmCommand           Keyword
 
-"optional highlighting
-"highlight default link btmShowTab	Error
-"highlight default link btmShowTabc	Error
-"highlight default link btmIdentifier   Identifier
-
+if exists ('g:btm_highlight_tabs') && g:btm_highlight_tabs
+    highlight default link btmShowTab   Error
+    highlight default link btmShowTabc  Error
 endif
 
-"vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab :
+if exists ('g:btm_highlight_identifier') && g:btm_highlight_identifier
+    highlight default link btmIdentifier Identifier
+endif
+
+finish
+
+"vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab :
 "vim: set textwidth=0 filetype=vim foldmethod=marker nospell :

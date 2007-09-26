@@ -1,34 +1,79 @@
 "------------------------------------------------------------------------------
 "  Description: Perform btm specific completion & tagging.
-"     Language: btm (2005)
+"     Language: BTM (Batch to Memory - 4NT, TakeCommand Script)
 "	   $Id$
+"    Copyright: Copyright (C) 2007 Martin Krischik
 "   Maintainer: Martin Krischik
-"		Neil Bird <neil@fnxweb.com>
+"               John Leo Spetz <jls11@po.cwru.edu>
 "      $Author$
 "	 $Date$
-"      Version: 0.1
+"      Version: 1.0
 "    $Revision$
 "     $HeadURL$
-"      History: 08.11.2006 MK A btm Syntax file
+"      History: 22.11.2007 MK A new Btm Filetype Bundle
 "    Help Page: ft-btm-functions
 "------------------------------------------------------------------------------
 
 if version < 700
    finish
-endif 
+endif
 
 let g:btm#Keywords	   = []
 
 " Section: g:btm#Keywords {{{1
 "
-" Section: add 4NT / TakeCommand keywords {{{2
+" Section: add 4NT / TakeCommand command {{{2
 "
-for Item in ["ACTIVATE", "ALIAS", "ASSOC", "ATTRIB", "BATCOMP", "BDEBUGGER", "BEEP", "BREAK", "BREAKPOINT", "CALL", "CANCEL", "CASE", "CD", "CDD", "CHDIR", "CLS", "COLOR", "COPY", "DATE", "DDEEXEC", "DEBUGSTRING", "DEFAULT", "DEL", "DELAY", "DESCRIBE", "DETACH", "DIR", "DIRHISTORY", "DIRS", "DO", "DRAWBOX", "DRAWHLINE", "DRAWVLINE", "ECHO", "ECHOERR", "ECHOS", "ECHOSERR", "EJECTMEDIA", "ENDLOCAL", "ENDSWITCH", "ERASE", "ESET", "EVENTLOG", "EXCEPT", "EXIT", "FFIND", "FOR", "FREE", "FTYPE", "FUNCTION", "GLOBAL", "GOSUB", "GOTO", "HEAD", "HELP", "HISTORY", "IF", "IFF", "IFTP", "INKEY", "INPUT", "JABBER", "KEYBD", "KEYS", "KEYSTACK", "LIST", "LOADBTM", "LOG", "MD", "MEMORY", "MKDIR", "MKLINK", "MKLNK", "MOVE", "MSGBOX", "ON", "OPTION", "OSD", "PATH", "PAUSE", "PDIR", "PLAYAVI", "PLAYSOUND", "PLUGIN", "POPD", "POSTMSG", "PRINT", "PRIORITY", "PROMPT", "PUSHD", "QUERYBOX", "QUIT", "RD", "REBOOT", "RECYCLE", "REM", "REN", "RENAME", "RETURN", "REXEC", "RMDIR", "RSHELL", "SCREEN", "SCRIPT", "SCRPUT", "SELECT", "SENDMAIL", "SET", "SETDOS", "SETLOCAL", "SHIFT", "SHORTCUT", "SHRALIAS", "SMPP", "SNMP", "SNPP", "START", "SWITCH", "SYNC", "TAIL", "TASKEND", "TASKLIST", "TCTOOLBAR", "TEE", "TEXT", "TIME", "TIMER", "TITLE", "TOUCH", "TRANSIENT", "TREE", "TRUENAME", "TYPE", "UNALIAS", "UNFUNCTION", "UNSET", "VER", "VERIFY", "VOL", "VSCRPUT", "WHICH", "WINDOW", "WMIQUERY", "Y"]
+for Item in ["ACTIVATE", "ALIAS", "ASSOC", "ATTRIB", "BATCOMP", "BDEBUGGER", "BEEP", "BREAK", "BREAKPOINT", "CALL", "CANCEL", "CASE", "CD", "CDD", "CHDIR", "CLS", "COLOR", "COPY", "DATE", "DDEEXEC", "DEBUGSTRING", "DEFAULT", "DEL", "DELAY", "DESCRIBE", "DETACH", "DIR", "DIRHISTORY", "DIRS", "DRAWBOX", "DRAWHLINE", "DRAWVLINE", "EJECTMEDIA", "ENDLOCAL", "ERASE", "ESET", "EVENTLOG", "EXCEPT", "EXIT", "FFIND", "FOR", "FREE", "FTYPE", "FUNCTION", "GLOBAL", "GOSUB", "GOTO", "HEAD", "HELP", "HISTORY", "IFTP", "INKEY", "INPUT", "JABBER", "KEYBD", "KEYS", "KEYSTACK", "LIST", "LOADBTM", "LOG", "MD", "MEMORY", "MKDIR", "MKLINK", "MKLNK", "MOVE", "MSGBOX", "ON", "OPTION", "OSD", "PATH", "PAUSE", "PDIR", "PLAYAVI", "PLAYSOUND", "PLUGIN", "POPD", "POSTMSG", "PRINT", "PRIORITY", "PROMPT", "PUSHD", "QUERYBOX", "QUIT", "RD", "REBOOT", "RECYCLE", "REM", "REN", "RENAME", "RETURN", "REXEC", "RMDIR", "RSHELL", "SCREEN", "SCRIPT", "SCRPUT", "SELECT", "SENDMAIL", "SET", "SETDOS", "SETLOCAL", "SHIFT", "SHORTCUT", "SHRALIAS", "SMPP", "SNMP", "SNPP", "START", "SYNC", "TAIL", "TASKEND", "TASKLIST", "TCTOOLBAR", "TEE", "TEXT", "TIME", "TIMER", "TITLE", "TOUCH", "TRANSIENT", "TREE", "TRUENAME", "TYPE", "UNALIAS", "UNFUNCTION", "UNSET", "VER", "VERIFY", "VOL", "VSCRPUT", "WHICH", "WINDOW", "WMIQUERY", "Y"]
     let g:btm#Keywords += [{
 	    \ 'word':  Item,
 	    \ 'menu':  'command',
 	    \ 'info':  '4NT /TakeCommand command.',
 	    \ 'kind':  'k',
+	    \ 'icase': 0}]
+endfor
+
+" Section: add 4NT / TakeCommand  echo command {{{2
+"
+for Item in ["ECHO", "ECHOERR", "ECHOS", "ECHOSERR"]
+    let g:btm#Keywords += [{
+	    \ 'word':  Item,
+	    \ 'menu':  'command',
+	    \ 'info':  '4NT /TakeCommand echo command.',
+	    \ 'kind':  'e',
+	    \ 'icase': 0}]
+endfor
+
+" Section: add 4NT / TakeCommand conditional command {{{2
+"
+for Item in ["IF", "IFF", "ENDIFF", "THEN", "ELSE", "ELSEIFF", "SWITCH", "CASE", "ENDSWITCH"]
+    let g:btm#Keywords += [{
+	    \ 'word':  Item,
+	    \ 'menu':  'conditional',
+	    \ 'info':  '4NT /TakeCommand conditional command.',
+	    \ 'kind':  'c',
+	    \ 'icase': 0}]
+endfor
+
+" Section: add 4NT / TakeCommand repeat command {{{2
+"
+for Item in ["FOR", "IN", "DO", "ENDDO"]
+    let g:btm#Keywords += [{
+	    \ 'word':  Item,
+	    \ 'menu':  'repeat',
+	    \ 'info':  '4NT /TakeCommand repeat command.',
+	    \ 'kind':  'r',
+	    \ 'icase': 0}]
+endfor
+
+" Section: add 4NT / TakeCommand operators {{{2
+"
+for Item in ["NOT", "ERRORLEVEL", "GT", "LT", "EQ", "NE", "GE", "LE", "DEFINED", "EXIST", "ISALIAS", "ISDIR", "DIREXIST", "ISINTERNAL", "ISLABEL", "AND", "OR", "XOR"]
+    let g:btm#Keywords += [{
+	    \ 'word':  Item,
+	    \ 'menu':  'operator',
+	    \ 'info':  '4NT /TakeCommand operators.',
+	    \ 'kind':  'o',
 	    \ 'icase': 0}]
 endfor
 
@@ -56,7 +101,7 @@ endfor
 
 " Section: add 4NT / TakeCommand internal function {{{2
 "
-for Item in ["@ABS", "@AFSCELL", "@AFSMOUNT", "@AFSPATH", "@AFSSYMLINK", "@AFSVOLID", "@AFSVOLNAME", "@AGEDATE", "@ALIAS", "@ALTNAME", "@ASCII", "@ASSOC", "@ATTRIB", "@AVERAGE", "@CAPI", "@CAPS", "@CDROM", "@CEILING", "@CHAR", "@CLIP", "@CLIPW", "@COLOR", "@COMMA", "@COMPARE", "@CONSOLE", "@CONVERT", "@COUNT", "@CRC",3"",2"", "@CWD", "@CWDS", "@DATE", "@DAY", "@DEC", "@DECIMAL", "@DESCRIPT", "@DEVICE", "@DIGITS", "@DIRSTACK", "@DISKFREE", "@DISKTOTAL", "@DISKUSED", "@DOMAIN", "@DOW", "@DOWF", "@DOWI", "@DOY", "@DRIVETYPE", "@DRIVETYPEEX", "@ENUMSERVERS", "@ENUMSHARES", "@ERRTEXT", "@EVAL", "@EXEC", "@EXECSTR", "@EXETYPE", "@EXPAND", "@EXT", "@FIELD", "@FIELDS", "@FILEAGE", "@FILECLOSE", "@FILEDATE", "@FILENAME", "@FILEOPEN", "@FILEREAD", "@FILES", "@FILESEEK", "@FILESEEKL", "@FILESIZE", "@FILETIME", "@FILEWRITE", "@FILEWRITEB", "@FINDCLOSE", "@FINDFIRST", "@FINDNEXT", "@FLOOR", "@FORMAT", "@FORMATN", "@FSTYPE", "@FTYPE", "@FULL", "@FUNCTION", "@GETDIR", "@GETFILE", "@GETFOLDER", "@GROUP", "@HISTORY", "@IDOW", "@IDOWF", "@IF", "@INC", "@INDEX", "@INIREAD", "@INIWRITE", "@INSERT", "@INODE", "@INSTR", "@INT", "@IPADDRESS", "@IPNAME", "@ISALNUM", "@ISALPHA", "@ISASCII", "@ISCNTRL", "@ISDIGIT", "@ISPRINT", "@ISPUNCT", "@ISSPACE", "@ISXDIGIT", "@JUNCTION", "@LABEL", "@LCS", "@LEFT", "@LEN", "@LFN", "@LINE", "@LINES", "@LINKS", "@LOWER", "@LTRIM", "@MAKEAGE", "@MAKEDATE", "@MAKETIME", "@MAX", "@MD",5"", "@MIN", "@MONTH", "@NAME", "@NUMERIC", "@OPTION", "@OWNER", "@PATH", "@PERL", "@PING", "@QUOTE", "@RANDOM", "@READSCR", "@READY", "@REGCREATE", "@REGDELKEY", "@REGEX", "@REGEXINDEX", "@REGEXIST", "@REGEXSUB", "@REGQUERY", "@REGSET", "@REGSETENV", "@REMOTE", "@REMOVABLE", "@REPEAT", "@REPLACE", "@REVERSE", "@REXX", "@RIGHT", "@RTRIM", "@RUBY", "@SCRIPT", "@SEARCH", "@SELECT", "@SERIAL", "@SFN", "@SHA",1"", "@SHA",2"",5"",6"", "@SHA",3"",8"",4"", "@SHA",5"",1"",2"", "@SIMILAR", "@SNAPSHOT", "@STRIP", "@SUBST", "@SUBSTR", "@SUMMARY", "@SYMLINK", "@TIME", "@TIMER", "@TRIM", "@TRUENAME", "@TRUNCATE", "@UNC", "@UNICODE", "@UNIQUE", "@UNQUOTE", "@UNQUOTES", "@UPPER", "@VERINFO", "@WATTRIB", "@WILD", "@WINAPI", "@WINCLASS", "@WINEXENAME", "@WININFO", "@WINMEMORY", "@WINMETRICS", "@WINPOS", "@WINSTATE", "@WINSYSTEM", "@WMI", "@WORD", "@WORDS", "@WORKGROUP", "@XMLPATH", "@YEAR"]
+for Item in ["@ABS", "@AFSCELL", "@AFSMOUNT", "@AFSPATH", "@AFSSYMLINK", "@AFSVOLID", "@AFSVOLNAME", "@AGEDATE", "@ALIAS", "@ALTNAME", "@ASCII", "@ASSOC", "@ATTRIB", "@AVERAGE", "@CAPI", "@CAPS", "@CDROM", "@CEILING", "@CHAR", "@CLIP", "@CLIPW", "@COLOR", "@COMMA", "@COMPARE", "@CONSOLE", "@CONVERT", "@COUNT", "@CRC32", "@CWD", "@CWDS", "@DATE", "@DAY", "@DEC", "@DECIMAL", "@DESCRIPT", "@DEVICE", "@DIGITS", "@DIRSTACK", "@DISKFREE", "@DISKTOTAL", "@DISKUSED", "@DOMAIN", "@DOW", "@DOWF", "@DOWI", "@DOY", "@DRIVETYPE", "@DRIVETYPEEX", "@ENUMSERVERS", "@ENUMSHARES", "@ERRTEXT", "@EVAL", "@EXEC", "@EXECSTR", "@EXETYPE", "@EXPAND", "@EXT", "@FIELD", "@FIELDS", "@FILEAGE", "@FILECLOSE", "@FILEDATE", "@FILENAME", "@FILEOPEN", "@FILEREAD", "@FILES", "@FILESEEK", "@FILESEEKL", "@FILESIZE", "@FILETIME", "@FILEWRITE", "@FILEWRITEB", "@FINDCLOSE", "@FINDFIRST", "@FINDNEXT", "@FLOOR", "@FORMAT", "@FORMATN", "@FSTYPE", "@FTYPE", "@FULL", "@FUNCTION", "@GETDIR", "@GETFILE", "@GETFOLDER", "@GROUP", "@HISTORY", "@IDOW", "@IDOWF", "@IF", "@INC", "@INDEX", "@INIREAD", "@INIWRITE", "@INSERT", "@INODE", "@INSTR", "@INT", "@IPADDRESS", "@IPNAME", "@ISALNUM", "@ISALPHA", "@ISASCII", "@ISCNTRL", "@ISDIGIT", "@ISPRINT", "@ISPUNCT", "@ISSPACE", "@ISXDIGIT", "@JUNCTION", "@LABEL", "@LCS", "@LEFT", "@LEN", "@LFN", "@LINE", "@LINES", "@LINKS", "@LOWER", "@LTRIM", "@MAKEAGE", "@MAKEDATE", "@MAKETIME", "@MAX", "@MD5", "@MIN", "@MONTH", "@NAME", "@NUMERIC", "@OPTION", "@OWNER", "@PATH", "@PERL", "@PING", "@QUOTE", "@RANDOM", "@READSCR", "@READY", "@REGCREATE", "@REGDELKEY", "@REGEX", "@REGEXINDEX", "@REGEXIST", "@REGEXSUB", "@REGQUERY", "@REGSET", "@REGSETENV", "@REMOTE", "@REMOVABLE", "@REPEAT", "@REPLACE", "@REVERSE", "@REXX", "@RIGHT", "@RTRIM", "@RUBY", "@SCRIPT", "@SEARCH", "@SELECT", "@SERIAL", "@SFN", "@SHA1", "@SHA256", "@SHA384", "@SHA512", "@SIMILAR", "@SNAPSHOT", "@STRIP", "@SUBST", "@SUBSTR", "@SUMMARY", "@SYMLINK", "@TIME", "@TIMER", "@TRIM", "@TRUENAME", "@TRUNCATE", "@UNC", "@UNICODE", "@UNIQUE", "@UNQUOTE", "@UNQUOTES", "@UPPER", "@VERINFO", "@WATTRIB", "@WILD", "@WINAPI", "@WINCLASS", "@WINEXENAME", "@WININFO", "@WINMEMORY", "@WINMETRICS", "@WINPOS", "@WINSTATE", "@WINSYSTEM", "@WMI", "@WORD", "@WORDS", "@WORKGROUP", "@XMLPATH", "@YEAR"]
     let g:btm#Keywords += [{
 	    \ 'word':  Item,
 	    \ 'menu':  'internal function',
@@ -82,7 +127,7 @@ endfor
 "
 " This function is used for the 'complete' option.
 "
-function! btm#User_Complete(findstart, base)
+function btm#User_Complete(findstart, base)
    if a:findstart == 1
       "
       " locate the start of the word
@@ -115,21 +160,6 @@ function! btm#User_Complete(findstart, base)
    endif
 endfunction btm#User_Complete
 
-" Section: btm#Completion (cmd) {{{2
-"
-" Word completion (^N/^R/^X^]) - force '.' inclusion
-function btm#Completion (cmd)
-   set iskeyword+=46
-   return a:cmd . "\<C-R>=btm#Completion_End ()\<CR>"
-endfunction btm#Completion
-
-" Section: btm#Completion_End () {{{2
-"
-function btm#Completion_End ()
-   set iskeyword-=46
-   return ''
-endfunction btm#Completion_End
-
 " }}}1
 
 lockvar! g:btm#Keywords
@@ -141,5 +171,5 @@ finish " 1}}}
 "
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: textwidth=78 wrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab
+" vim: textwidth=0 wrap tabstop=8 shiftwidth=3 softtabstop=3 noexpandtab
 " vim: foldmethod=marker

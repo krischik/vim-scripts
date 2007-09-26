@@ -1,16 +1,17 @@
 "------------------------------------------------------------------------------
-"  Description: Vim filetype plugin file
+"  Description: Filetype plugin file for Btm
 "     Language: BTM (Batch to Memory - 4NT, TakeCommand Script)
-"	   $Id$
+"          $Id$
+"    Copyright: Copyright (C) 2007 Martin Krischik
 "   Maintainer: Martin Krischik <krischik@users.sourceforge.net>
 "               Bram Moolenaar <Bram@vim.org>
 "      $Author$
-"	 $Date$
-"      Version: 4.5
+"        $Date$
+"      Version: 1.0
 "    $Revision$
 "     $HeadURL$
-"      History: 08.07.2007 MK.
-"    Help Page: ft-ada-plugin
+"      History: 22.11.2007 MK A new Btm Filetype Bundle
+"    Help Page: ft-btm-plugin
 "------------------------------------------------------------------------------
 " btm filetype plugin file
 
@@ -19,44 +20,34 @@ if exists("b:did_ftplugin") || version < 700
   finish
 endif
 
-" Behaves mostly like dosbatch
-runtime! ftplugin/dosbatch.vim ftplugin/dosbatch_*.vim ftplugin/dosbatch/*.vim
-
 " Section: File-Option {{{1
 "
 setlocal encoding=utf-8
 setlocal wrap
 setlocal smartcase
 setlocal ignorecase
+setlocal formatoptions-=t formatoptions+=rol
 
 " Section: Comments {{{1
 "
 setlocal commentstring=::\ %s
 setlocal complete=.,w,b,u,t,i
+setlocal comments=b:rem,b:@rem,b:REM,b:@REM,b:::
+
+" Section: Define patterns for the browse file filter {{{1
+"
+if has("gui_win32") && !exists("b:browsefilter")
+  let b:browsefilter = "DOS Batch Files (*.bat, *.btm, *.cmd)\t*.bat;*.btm;*.cmd\nAll Files (*.*)\t*.*\n"
+endif
 
 " Section: Tagging {{{1
 "
-setlocal iskeyword+=- 
+setlocal iskeyword+=-
 
 " Section: Completion {{{1
 "
 setlocal omnifunc=syntaxcomplete#Complete
 setlocal completefunc=btm#User_Complete
-
-if exists ("g:btm_extended_completion")
-   if mapcheck ('<C-N>','i') == ''
-      inoremap <unique> <buffer> <C-N> <C-R>=btm#Completion("\<lt>C-N>")<cr>
-   endif
-   if mapcheck ('<C-P>','i') == ''
-      inoremap <unique> <buffer> <C-P> <C-R>=btm#Completion("\<lt>C-P>")<cr>
-   endif
-   if mapcheck ('<C-X><C-]>','i') == ''
-      inoremap <unique> <buffer> <C-X><C-]> <C-R>=<SID>btm#Completion("\<lt>C-X>\<lt>C-]>")<cr>
-   endif
-   if mapcheck ('<bs>','i') == ''
-      inoremap <silent> <unique> <buffer> <bs> <C-R>=btm#Insert_Backspace ()<cr>
-   endif
-endif
 
 " Section: Folding {{{1
 "
