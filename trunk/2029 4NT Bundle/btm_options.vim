@@ -54,11 +54,10 @@ tar --create --bzip2          \
 
 " Section: Svn options {{{1
 
-svn copy                                                                               \
-   https://vim-scripts.googlecode.com/svn/trunk/4NT%20Bundle/modelines_options.vim     \
-   https://vim-scripts.googlecode.com/svn/tags/4NT%20Bundle 1.0/modelines_options.vim  \
-   -m "Tag Version 1.0 of BTM Bundle";
-   
+svn copy -m "Tag Version 1.0 of BTM Bundle" 'https://vim-scripts.googlecode.com/svn/trunk/2029%204NT%20Bundle' 'https://vim-scripts.googlecode.com/svn/tags/2029%204NT%20Bundle%201.0'
+
+svn copy -m "Tag Version 1.0 of BTM Bundle" https://vim-scripts.googlecode.com/svn/trunk/2029%%204NT%%20Bundle https://vim-scripts.googlecode.com/svn/tags/2029%%204NT%%20Bundle%%201.0
+ 
 " }}}1
 
 "------------------------------------------------------------------------------
@@ -66,5 +65,5 @@ svn copy                                                                        
 "
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
-" vim: textwidth=0 nowrap tabstop=8 shiftwidth=3 softtabstop=3 expandtab
+" vim: textwidth=0 wrap tabstop=8 shiftwidth=3 softtabstop=3 expandtab
 " vim: foldmethod=marker
