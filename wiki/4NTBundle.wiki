@@ -12,4 +12,4 @@ Updates both the file type and syntax plug-in for btm (Batch to Memory - 4NT, Ta
 
 = Maintainer =
 
-  * [http://www.vim.org/account/profile.php?user_id=7818|Martin Krischik]
+  * [http://www.vim.org/account/profile.php?user_id=7818 Martin Krischik]
