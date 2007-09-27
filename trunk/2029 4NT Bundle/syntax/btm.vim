@@ -7,7 +7,7 @@
 "               John Leo Spetz <jls11@po.cwru.edu>
 "      $Author$
 "        $Date$
-"      Version: 1.0
+"      Version: 1.1
 "    $Revision$
 "     $HeadURL$
 "      History: 22.11.2007 MK A new Btm Filetype Bundle
@@ -147,8 +147,8 @@ highlight def link btmCmdDivider        Special
 highlight def link btmConditional       Conditional
 highlight def link btmDotBoolOp         Operator
 highlight def link btmRepeat            Repeat
-highlight def link btmEchoCommand       btmStatement
-highlight def link btmEchoParam         btmStatement
+highlight def link btmEchoCommand       Keyword
+highlight def link btmEchoParam         Keyword
 highlight def link btmStatement         Statement
 highlight def link btmTodo              Todo
 highlight def link btmString            String

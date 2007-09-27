@@ -7,7 +7,7 @@
 "               John Leo Spetz <jls11@po.cwru.edu>
 "      $Author$
 "	 $Date$
-"      Version: 1.0
+"      Version: 1.1
 "    $Revision$
 "     $HeadURL$
 "      History: 22.11.2007 MK A new Btm Filetype Bundle
@@ -18,7 +18,7 @@ if version < 700
    finish
 endif
 
-let g:btm#Keywords	   = []
+let g:btm#Keywords = []
 
 " Section: g:btm#Keywords {{{1
 "
@@ -33,7 +33,7 @@ for Item in ["ACTIVATE", "ALIAS", "ASSOC", "ATTRIB", "BATCOMP", "BDEBUGGER", "BE
 	    \ 'icase': 0}]
 endfor
 
-" Section: add 4NT / TakeCommand  echo command {{{2
+" Section: add 4NT / TakeCommand echo command {{{2
 "
 for Item in ["ECHO", "ECHOERR", "ECHOS", "ECHOSERR"]
     let g:btm#Keywords += [{
@@ -57,7 +57,7 @@ endfor
 
 " Section: add 4NT / TakeCommand repeat command {{{2
 "
-for Item in ["FOR", "IN", "DO", "ENDDO"]
+for Item in ["FOR", "IN", "DO", "ENDDO", "WHILE", "FOREVER", "UNTIL", "DATETIME", "ITERATE", "LEAVE"]
     let g:btm#Keywords += [{
 	    \ 'word':  Item,
 	    \ 'menu':  'repeat',
@@ -110,7 +110,7 @@ for Item in ["@ABS", "@AFSCELL", "@AFSMOUNT", "@AFSPATH", "@AFSSYMLINK", "@AFSVO
 	    \ 'icase': 0}]
 endfor
 
-" Section: add  4NT / TakeCommand configuration option {{{2
+" Section: add 4NT / TakeCommand configuration option {{{2
 "
 for Item in ["4StartPath", "AddFile", "AliasExpand", "AmPm", "ANSI", "AppendToDir", "AutoCancel", "AutoRun", "Backspace", "BatchEcho", "BeepFreq", "BeepLength", "BeginLine", "BGColorRGB", "CDDWinColors", "CDDWinHeight", "CDDWinLeft", "CDDWinTop", "CDDWinWidth", "ClearKeyMap", "ColorDir", "CMDExtensions", "CommandEscape", "CommandSep", "CompleteHidden", "CompletePaths", "ConsoleColumns", "ConsoleRows", "Copy", "CopyPrompt", "CUA", "CursorIns", "CursorOver", "Debug", "DebuggerTransparency", "DecimalChar", "Del", "DelayedExpansion", "DelGlobalQuery", "DelHistory", "DelToBeginning", "DelToEnd", "DelWordLeft", "DelWordRight", "DescriptionMax", "DescriptionName", "Descriptions", "DirHistory", "DirWinOpen", "Down", "DuplicateBugs", "EditMode", "Editor", "EndHistory", "EndLine", "EraseLine", "EscapeChar", "EvalMax", "EvalMin", "ExecLine", "ExecWait", "ExitFile", "FGColorRGB", "FileCompletion", "FirewallHost", "FirewallPassword", "FirewallType", "FirewallUser", "FTPCFG", "FTPTimeout", "FuzzyCD", "Help", "HelpWord", "HideConsole", "HistCopy", "HistDups", "HistFile", "HistLogName", "HistLogOn", "HistMin", "HistMove", "History", "HistWinOpen", "HistWrap", "HTTPTimeout", "IBeamCursor", "InactiveTransparency", "Include", "INIQuery", "InputColors", "Ins", "JabberPassword", "JabberServer", "JabberUser", "LastHistory", "Left", "LFNToggle", "LineToEnd", "ListBack", "ListboxBarColors", "ListContinue", "ListColors", "ListExit", "ListFind", "ListFindRegex", "ListFindRegexReverse", "ListFindReverse", "ListHex", "ListHighBit", "ListInfo", "ListInverseColors", "ListNext", "ListOpen", "ListPrevious", "ListPrint", "ListRowStart", "ListStatBarColors", "ListUnicode", "ListWrap", "LocalAliases", "LocalDirHistory", "LocalFunctions", "LocalHistory", "LogAll", "LogErrors", "LogName", "LogOn", "MailAddress", "MailPassword", "MailPort", "MailServer", "MailUser", "NextFile", "NextHistory", "NextINIFile", "NoClobber", "NormalEditKey", "NormalKey", "NormalListKey", "NormalPopupKey", "NTFSDescriptions", "ParameterChar", "PassiveFTP", "Paste", "PathExt", "PauseOnError", "Perl", "PopFile", "PopupWinBegin", "PopupWinColors", "PopupWinDel", "PopupWinEdit", "PopupWinEnd", "PopupWinExec", "PopupWinHeight", "PopupWinLeft", "PopupWinTop", "PopupWinWidth", "PrevFile", "PrevHistory", "Proxy", "ProxyPassword", "ProxyPort", "ProxyUser", "RecycleBin", "RegularExpressions", "RepeatFile", "REXX", "Right", "RLocalHost", "RLocalUser", "RLocalPort", "Ruby", "SaveDirCase", "SaveHistory", "ScreenBufSize", "ScreenColumns", "ScreenRows", "ScrollDown", "ScrollPgDn", "ScrollPgUp", "ScrollUp", "SelectColors", "SelectStatBarColors", "ServerCompletion", "SettingChange", "SHChangeNotify", "SSLPort", "SSLProvider", "SSLStartMode", "StartupFile", "StatusBarOn", "StatusBarText", "StdColors", "SwapScrollKeys", "SwitchChar", "TabStops", "TCStartPath", "TFTPTimeout", "ThousandsChar", "TimeServer", "ToolBarOn", "ToolBarText", "Transparency", "TreePath", "UnicodeOutput", "UnixPaths", "Up", "UpdateTitle", "VariableExpand", "Win32SFNSearch", "WindowHeight", "WindowState", "WindowWidth", "WindowX", "WindowY", "WordLeft", "WordRight", "Wow64FsRedirection", "ZoneID"]
     let g:btm#Keywords += [{

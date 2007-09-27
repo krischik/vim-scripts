@@ -7,7 +7,7 @@
 "               John Leo Spetz <jls11@po.cwru.edu>
 "      $Author$
 "        $Date$
-"      Version: 1.0
+"      Version: 1.1
 "    $Revision$
 "     $HeadURL$
 "      History: 22.11.2007 MK A new Btm Filetype Bundle
@@ -32,7 +32,7 @@ finish " 1}}}
 " Section: Vimball options {{{1
 
 :set noexpandtab fileformat=unix encoding=utf-8
-:37,40 MkVimball btm-1.0.vba
+:37,40 MkVimball btm-1.1.vba
 
 btm_options.vim
 autoload\btm.vim
@@ -44,7 +44,7 @@ syntax\btm.vim
 " Section: Tar options {{{1
 
 tar --create --bzip2          \
-   --file="btm-1.0.tar.bz2"   \
+   --file="btm-1.1.tar.bz2"   \
    btm_options.vim            \
    autoload/btm.vim           \
    ftplugin/btm.vim           \
@@ -54,9 +54,9 @@ tar --create --bzip2          \
 
 " Section: Svn options {{{1
 
-svn copy -m "Tag Version 1.0 of BTM Bundle" 'https://vim-scripts.googlecode.com/svn/trunk/2029%204NT%20Bundle' 'https://vim-scripts.googlecode.com/svn/tags/2029%204NT%20Bundle%201.0'
+svn copy -m "Tag Version 1.1 of BTM Bundle" 'https://vim-scripts.googlecode.com/svn/trunk/2029%204NT%20Bundle' 'https://vim-scripts.googlecode.com/svn/tags/2029%204NT%20Bundle%201.1'
 
-svn copy -m "Tag Version 1.0 of BTM Bundle" https://vim-scripts.googlecode.com/svn/trunk/2029%%204NT%%20Bundle https://vim-scripts.googlecode.com/svn/tags/2029%%204NT%%20Bundle%%201.0
+svn copy -m "Tag Version 1.1 of BTM Bundle" https://vim-scripts.googlecode.com/svn/trunk/2029%%204NT%%20Bundle https://vim-scripts.googlecode.com/svn/tags/2029%%204NT%%20Bundle%%201.1
 
 " }}}1
 
