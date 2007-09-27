@@ -10,7 +10,7 @@
 "      Version: 1.0
 "    $Revision$
 "     $HeadURL$
-"      History: 22.11.2007 MK A new Btm Filetype Bundle 
+"      History: 22.11.2007 MK A new Btm Filetype Bundle
 "        Usage: copy content into your .vimrc and change options to your
 "               likeing.
 "    Help Page: ft_btm.txt
@@ -46,9 +46,9 @@ syntax\btm.vim
 tar --create --bzip2          \
    --file="btm-1.0.tar.bz2"   \
    btm_options.vim            \
-   autoload\btm.vim           \
-   ftplugin\btm.vim           \
-   syntax\btm.vim             ;
+   autoload/btm.vim           \
+   ftplugin/btm.vim           \
+   syntax/btm.vim             ;
 
 " }}}1
 
@@ -57,7 +57,7 @@ tar --create --bzip2          \
 svn copy -m "Tag Version 1.0 of BTM Bundle" 'https://vim-scripts.googlecode.com/svn/trunk/2029%204NT%20Bundle' 'https://vim-scripts.googlecode.com/svn/tags/2029%204NT%20Bundle%201.0'
 
 svn copy -m "Tag Version 1.0 of BTM Bundle" https://vim-scripts.googlecode.com/svn/trunk/2029%%204NT%%20Bundle https://vim-scripts.googlecode.com/svn/tags/2029%%204NT%%20Bundle%%201.0
- 
+
 " }}}1
 
 "------------------------------------------------------------------------------
