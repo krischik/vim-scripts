@@ -3,7 +3,7 @@
 
 = Details =
 
-Updates both the file type and syntax plug-in for btm (Batch to Memory - 4NT, TakeCommand Script) file type Bundle. Includes simple user and omni completion. 
+Updates both the file type and syntax plug-in for btm (Batch to Memory - [http://www.jpsoft.com/4ntdes.htm 4NT], [http://www.jpsoft.com/tcmddes.htm TakeCommand] Script) file type Bundle. Includes simple user and omni completion. 
 
 = Links =
 
