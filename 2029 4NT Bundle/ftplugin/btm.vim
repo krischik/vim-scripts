@@ -5,12 +5,14 @@
 "    Copyright: Copyright (C) 2007 Martin Krischik
 "   Maintainer: Martin Krischik <krischik@users.sourceforge.net>
 "               Bram Moolenaar <Bram@vim.org>
+"               Bill McCarthy <WJMc@pobox.com>
 "      $Author$
 "        $Date$
-"      Version: 1.0
+"      Version: 1.1
 "    $Revision$
 "     $HeadURL$
-"      History: 22.11.2007 MK A new Btm Filetype Bundle
+"      History: 22.11.2007 MK  A new Btm Filetype Bundle
+"               27.09.2007 BMC Matchit setup
 "    Help Page: ft-btm-plugin
 "------------------------------------------------------------------------------
 " btm filetype plugin file
@@ -39,6 +41,15 @@ setlocal comments=b:rem,b:@rem,b:REM,b:@REM,b:::
 if has("gui_win32") && !exists("b:browsefilter")
   let b:browsefilter = "DOS Batch Files (*.bat, *.btm, *.cmd)\t*.bat;*.btm;*.cmd\nAll Files (*.*)\t*.*\n"
 endif
+
+" Section: Matchit {{{1
+"
+let b:match_words
+    \= '\<iff\>:\<elseiff\>:\<else\>:\<endiff\>,'
+    \. '\<do\>:\<iterate\>:\<leave\>:\<enddo\>,'
+    \. '^\:\a\+:\<return\>,'
+    \. '\%(^\s*\)\@<=text\s*$:\%(^\s*\)\@<=endtext\s*$,'
+    \. '\<switch\>:\<case\>:\<default\>:\<endswitch\>'
 
 " Section: Tagging {{{1
 "
