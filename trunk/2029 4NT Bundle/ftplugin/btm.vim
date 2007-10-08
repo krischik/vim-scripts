@@ -53,7 +53,7 @@ let b:match_words
 
 " Section: Tagging {{{1
 "
-setlocal iskeyword+=-
+setlocal iskeyword=@,48-57,_,192-255,-,\\,/,.
 
 " Section: Completion {{{1
 "
