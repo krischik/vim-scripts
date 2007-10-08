@@ -62,6 +62,8 @@ if exists ('g:btm_highlight_unusual_comments')
     syntax match btmComment     "^\ *:\ \+.*$" contains=btmTodo
 endif
 
+syntax match btmPreProc          '^\%1l::!.*$'
+
 syntax match btmLabelMark       "^\ *:[0-9a-zA-Z_\-]\+\>"
 syntax match btmLabelMark       "goto [0-9a-zA-Z_\-]\+\>"lc=5
 syntax match btmLabelMark       "gosub [0-9a-zA-Z_\-]\+\>"lc=6
@@ -73,13 +75,15 @@ syntax match btmCmdDivider      "|&\="
 syntax match btmCmdDivider      "%+"
 syntax match btmCmdDivider      "\^"
 
-syntax region   btmEcho         start="echo" skip="echo" matchgroup=btmCmdDivider end="%+" end="$" end="|&\=" end="\^" end=">[>&]*" contains=@btmEchos oneline
+syntax region   btmEcho         start="echo" skip="echo" matchgroup=btmCmdDivider end="%+" end="$" end="|&\=" end="\^$" end=">[>&]*" contains=@btmEchos oneline
 syntax cluster  btmEchos        contains=@btmVars,btmEchoCommand,btmEchoParam
+
 for b:Item in g:btm#Keywords
     if b:Item['kind'] == "e"
         execute "syntax keyword btmEchoCommand  contained" . b:Item['word']
     endif
 endfor
+
 syntax keyword  btmEchoParam    contained       on off
 
 " this is also a valid Label. I don't use it.
@@ -106,6 +110,7 @@ syntax match btmArgument                "%%\a\>"
 
 " //Show 4DOS built-in functions specially
 syntax match btmBIFMatch "%@\w\+\["he=e-1 contains=btmBuiltInFunc
+
 for b:Item in g:btm#Keywords
    if b:Item['kind'] == "f"
       execute "syntax keyword btmBuiltInFunc contained" . b:Item['word']
@@ -142,10 +147,10 @@ syntax match btmCommand "^?"
 
 highlight def link btmOperator          Operator
 highlight def link btmLabel             Label
-highlight def link btmLabelMark         Special
+highlight def link btmLabelMark         Label
 highlight def link btmCmdDivider        Special
 highlight def link btmConditional       Conditional
-highlight def link btmDotBoolOp         Operator
+highlight def link btmDotBoolOp         Boolean
 highlight def link btmRepeat            Repeat
 highlight def link btmEchoCommand       Keyword
 highlight def link btmEchoParam         Keyword
@@ -154,23 +159,38 @@ highlight def link btmTodo              Todo
 highlight def link btmString            String
 highlight def link btmNumber            Number
 highlight def link btmComment           Comment
-highlight def link btmArgument          Identifier
+highlight def link btmArgument          Structure
 highlight def link btmVariable          Identifier
 highlight def link btmEcho              String
-highlight def link btmBIFMatch          btmStatement
+highlight def link btmBIFMatch          Type
 highlight def link btmBuiltInFunc       Function
 highlight def link btmBuiltInVar        Identifier
 highlight def link btmSpecialVar        Special
 highlight def link btmCommand           Keyword
+highlight def link btmPreProc           PreProc
 
+" Section: rainbow color {{{1
+"
+if exists("g:btm_rainbow_color") && g:btm_rainbow_color
+    call rainbow_parenthsis#LoadSquare ()
+    call rainbow_parenthsis#LoadRound ()
+    call rainbow_parenthsis#Activate ()
+endif
+
+" Section: tabs {{{1
+"
 if exists ('g:btm_highlight_tabs') && g:btm_highlight_tabs
     highlight default link btmShowTab   Error
     highlight default link btmShowTabc  Error
 endif
 
+" Section: itentifiers {{{1
+"
 if exists ('g:btm_highlight_identifier') && g:btm_highlight_identifier
     highlight default link btmIdentifier Identifier
 endif
+
+" }}}1
 
 finish
 
