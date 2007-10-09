@@ -7,7 +7,7 @@
 "               Luc Hermitte (hermitte@free.fr)
 "      $Author$
 "        $Date$
-"      Version: 3.0
+"      Version: 4.0
 "    $Revision$
 "     $HeadURL$
 "      History: 24.05.2006 MK Unified Headers
@@ -16,6 +16,8 @@
 "                             can be toggled
 "               09.09.2007 MK Use on LH's suggestion but use autoload to
 "                             impove memory consumtion and startup performance
+"               09.10.2007 MK Now with round, square brackets, curly and angle
+"                             brackets.
 "        Usage: copy to autoload directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
@@ -45,31 +47,33 @@ function rainbow_parenthsis#Activate()
     highlight default level14c ctermbg=LightGray ctermfg=darkcyan     guibg=AliceBlue    guifg=SeaGreen3
     highlight default level15c ctermbg=LightGray ctermfg=darkred      guibg=AliceBlue    guifg=DarkOrchid3
     highlight default level16c ctermbg=LightGray ctermfg=red          guibg=AliceBlue    guifg=firebrick3
-    let b:rainbow_parenthesis = 1
+    let rainbow_parenthesis#active = 1
 endfunction
 
 function rainbow_parenthsis#Clear()
     let i = 0
     while i != 16
         let i = i + 1
-        exe 'highlight clear level'.i.'c'
+        exe 'highlight clear level' . i . 'c'
     endwhile
-    let b:rainbow_parenthesis = 0
+    let rainbow_parenthesis#active = 0
 endfunction
 
-function rainbow_parenthsis#Toggle()
-    if ! exists('b:rainbow_parenthesis')
-        call rainbow_parenthsis#LoadSyntax()
+function rainbow_parenthsis#Toggle ()
+    if ! exists('rainbow_parenthesis#active')
+        call rainbow_parenthsis#LoadRound ()
     endif
-    if b:rainbow_parenthesis!=0
-        call rainbow_parenthsis#Clear()
+    if rainbow_parenthesis#active != 0
+        call rainbow_parenthsis#Clear ()
     else
-        call rainbow_parenthsis#Activate()
+        call rainbow_parenthsis#Activate ()
     endif
 endfunction
 
 " Section: syntax {{{1
 "
+syntax cluster  rainbow_parenthsis contains=@TOP,level1,level2,level3,level4,level5,level6,level7,level8,level9,level10,level11,level12,level13,level14,level15,level16,NoInParens
+
 " Subsection: parentheses or round brackets: {{{2
 "
 function rainbow_parenthsis#LoadRound ()
@@ -89,7 +93,7 @@ function rainbow_parenthsis#LoadRound ()
     syntax region level14 matchgroup=level14c start=/(/ end=/)/ contains=TOP,level14,level15, level16,NoInParens
     syntax region level15 matchgroup=level15c start=/(/ end=/)/ contains=TOP,level15, level16,NoInParens
     syntax region level16 matchgroup=level16c start=/(/ end=/)/ contains=TOP,level16,NoInParens
-    let b:rainbow_parenthesis = 0
+    let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: box brackets or square brackets: {{{2
@@ -111,7 +115,7 @@ function rainbow_parenthsis#LoadSquare ()
     syntax region level14 matchgroup=level14c start=/\[/ end=/\]/ contains=TOP,level14,level15, level16,NoInParens
     syntax region level15 matchgroup=level15c start=/\[/ end=/\]/ contains=TOP,level15, level16,NoInParens
     syntax region level16 matchgroup=level16c start=/\[/ end=/\]/ contains=TOP,level16,NoInParens
-    let b:rainbow_parenthesis = 0
+    let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: curly brackets or braces: {{{2
@@ -133,7 +137,7 @@ function rainbow_parenthsis#LoadBraces ()
     syntax region level14 matchgroup=level14c start=/{/ end=/}/ contains=TOP,level14,level15, level16,NoInParens
     syntax region level15 matchgroup=level15c start=/{/ end=/}/ contains=TOP,level15, level16,NoInParens
     syntax region level16 matchgroup=level16c start=/{/ end=/}/ contains=TOP,level16,NoInParens
-    let b:rainbow_parenthesis = 0
+    let rainbow_parenthesis#active = 0
 endfunction
 
 " Subsection: angle brackets or chevrons: {{{2
@@ -155,7 +159,7 @@ function rainbow_parenthsis#LoadChevrons ()
     syntax region level14 matchgroup=level14c start=/</ end=/>/ contains=TOP,level14,level15, level16,NoInParens
     syntax region level15 matchgroup=level15c start=/</ end=/>/ contains=TOP,level15, level16,NoInParens
     syntax region level16 matchgroup=level16c start=/</ end=/>/ contains=TOP,level16,NoInParens
-    let b:rainbow_parenthesis = 0
+    let rainbow_parenthesis#active = 0
 endfunction
 
    " }}}1

@@ -97,7 +97,7 @@ syntax match btmVariable                "%[0-9a-z_\-]*%" contains=@btmSpecialVar
 syntax match btmVariable                "%[=#]" contains=@btmSpecialVars
 syntax match btmVariable                "%??\=" contains=@btmSpecialVars
 " //Environment variable can be expanded using notation %[var] in 4DOS
-syntax match btmVariable                "%\[[0-9a-z_\-]*\]"
+syntax match btmVariable                "%\[[0-9a-z_\-]*\]" contains=@rainbow_parenthsis
 " //After some keywords next word should be an environment variable
 syntax match btmVariable                "defined\s\i\+"lc=8
 syntax match btmVariable                "set\s\{}\i\+"lc=4
@@ -109,15 +109,15 @@ syntax match btmArgument                "%\d\>&"
 syntax match btmArgument                "%%\a\>"
 
 " //Show 4DOS built-in functions specially
-syntax match btmBIFMatch "%@\w\+\["he=e-1 contains=btmBuiltInFunc
+syntax match btmBIFMatch "%@\w\+\["he=e-1 contains=btmBuiltInFunc,@rainbow_parenthsis
 
 for b:Item in g:btm#Keywords
    if b:Item['kind'] == "f"
-      execute "syntax keyword btmBuiltInFunc contained" . b:Item['word']
+      execute "syntax keyword btmBuiltInFunc contained " . strpart(b:Item['word'],1) 
     endif
 endfor
 
-syntax cluster btmSpecialVars contains=btmBuiltInVar,btmSpecialVar
+syntax cluster btmSpecialVars contains=btmBuiltInVar,btmSpecialVar,@rainbow_parenthsis
 
 " //Show specialized variables specially
 " syntax match btmSpecialVar contained  "+"
@@ -135,7 +135,7 @@ for b:Item in g:btm#Keywords
     elseif b:Item['kind'] == "s"
         execute "syntax keyword btmSpecialVar "         . b:Item['word']
     elseif b:Item['kind'] == "v"
-        execute "syntax keyword btmBuiltInVar "         . b:Item['word']
+        execute "syntax keyword btmBuiltInVar "         . strpart(b:Item['word'],1)
     elseif b:Item['kind'] == "k"
         execute "syntax keyword btmCommand "            . b:Item['word']
     endif
@@ -164,7 +164,7 @@ highlight def link btmVariable          Identifier
 highlight def link btmEcho              String
 highlight def link btmBIFMatch          Type
 highlight def link btmBuiltInFunc       Function
-highlight def link btmBuiltInVar        Identifier
+highlight def link btmBuiltInVar        Constant
 highlight def link btmSpecialVar        Special
 highlight def link btmCommand           Keyword
 highlight def link btmPreProc           PreProc
