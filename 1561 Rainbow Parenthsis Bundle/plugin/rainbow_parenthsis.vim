@@ -6,7 +6,7 @@
 "               John Gilmore
 "      $Author$
 "        $Date$
-"      Version: 3.0
+"      Version: 4.0
 "    $Revision$
 "     $HeadURL$
 "      History: 24.05.2006 MK Unified Headers
@@ -15,6 +15,8 @@
 "                             can be toggled
 "               09.09.2007 MK Use on LH's suggestion but use autoload to
 "                             impove memory consumtion and startup performance
+"               09.10.2007 MK Now with round, square brackets, curly and angle
+"                             brackets.
 "        Usage: copy to plugin directory.
 "------------------------------------------------------------------------------
 " This is a simple script. It extends the syntax highlighting to
