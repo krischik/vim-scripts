@@ -231,7 +231,7 @@ elseif (&term == "builtin_gui")
     highlight OList					 guifg=DarkCyan
     highlight Strike	gui=undercurl
     highlight Table					 guifg=DarkCyan       guibg=GhostWhite
-    highlight TableColumn                                guifg=VioletRed      guibg=GhostWhite
+    highlight TableColumn				 guifg=VioletRed      guibg=GhostWhite
     highlight UList					 guifg=SteelBlue
     highlight Underline	gui=underline
     "
