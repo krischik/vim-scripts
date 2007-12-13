@@ -31,6 +31,7 @@ if exists("s:loaded_backup") || version < 700
     finish
 else
     let s:loaded_backup = 22
+    setlocal cpoptions-=C
 
     if ! exists("g:backup_purge")
 	let g:backup_purge=10

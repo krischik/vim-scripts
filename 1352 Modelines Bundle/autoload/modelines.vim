@@ -21,7 +21,7 @@ if version < 700
    finish
 endif 
 
-let g:loaded_modlines=1
+setlocal cpoptions-=C
 
 if exists("loaded_nerd_comments")
     "------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ if exists("loaded_nerd_comments")
     function modelines#Insert ()
 	let l:Line = line (".")
 
-	call append (
+	call append(
 	    \ l:Line + 0,
 	    \ "vim: set"				.
 	    \ (&wrap ? " " : " no")	 . "wrap"	.
@@ -41,7 +41,7 @@ if exists("loaded_nerd_comments")
 	    \ (&expandtab ? " " : " no") . "expandtab"	.
 	    \ " :")
 	execute l:Line + 1 . " call NERDComment(0, 'norm')"
-	call append (
+	call append(
 	    \ l:Line + 1,
 	    \ "vim: set"				.
 	    \ " textwidth="		. &textwidth	.
