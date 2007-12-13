@@ -1,11 +1,11 @@
 "-------------------------------------------------------------------------------
 "  Description: My personal colors
-"          $Id: martin_krischik.vim,v 1.1 2007/09/10 09:31:44 krischikm Exp $
+"	   $Id: martin_krischik.vim,v 1.1 2007/09/10 09:31:44 krischikm Exp $
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer:	Martin Krischik
 "      $Author: krischikm $
-"        $Date: 2007/09/10 09:31:44 $
-"      Version: 3.3
+"	 $Date: 2007/09/10 09:31:44 $
+"      Version: 4.0
 "    $Revision: 1.1 $
 "     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/colors/martin_krischik.vim $
 "	  Note:	Tried and Tested for 'builtin_gui', 'xterm' (KDE Konsole)
@@ -14,8 +14,9 @@
 "		16.05.2006 MK Split GUI from terminal.
 "		24.05.2006 MK Unified Headers
 "		24.07.2006 MK Omni-Completion Colors.
-"               15.10.2006 MK Bram's suggestion for runtime integration
-"               19.01.2007 MK Better Link Highlight.
+"		15.10.2006 MK Bram's suggestion for runtime integration
+"		19.01.2007 MK Better Link Highlight.
+"		13.12.2007 MK Now Cream compatible
 "	 Usage: copy to colors directory
 "------------------------------------------------------------------------------
 
@@ -219,10 +220,10 @@ elseif (&term == "builtin_gui")
     highlight Bold	gui=bold
     highlight Code					 guifg=SlateBlue      guibg=GhostWhite
     highlight Header1					 guifg=DarkOrchid3    guibg=grey95
-    highlight Header2		       			 guifg=RoyalBlue3     guibg=grey95
-    highlight Header3		       			 guifg=MediumOrchid3  guibg=grey95
-    highlight Header4		       			 guifg=MediumOrchid4  guibg=grey95
-    highlight Header5		       			 guifg=DarkOrchid4    guibg=grey95
+    highlight Header2					 guifg=RoyalBlue3     guibg=grey95
+    highlight Header3					 guifg=MediumOrchid3  guibg=grey95
+    highlight Header4					 guifg=MediumOrchid4  guibg=grey95
+    highlight Header5					 guifg=DarkOrchid4    guibg=grey95
     highlight Html					 guifg=DarkSlateBlue  guibg=GhostWhite
     highlight Italic	gui=Italic
     highlight Link					 guifg=grey30	      guibg=snow
@@ -233,6 +234,32 @@ elseif (&term == "builtin_gui")
     highlight TableColumn                                guifg=VioletRed      guibg=GhostWhite
     highlight UList					 guifg=SteelBlue
     highlight Underline	gui=underline
+    "
+    " Group: Cream {{{3
+    "
+    " invisible characters
+    highlight NonText		 gui=none guifg=#99ddff
+    highlight SpecialKey	 gui=none guifg=#99ddff
+    " statusline
+    highlight User1		 gui=bold guifg=#aaaaaa	 guibg=LightBlue2
+    highlight User2		 gui=bold guifg=#000000	 guibg=LightBlue2
+    highlight User3		 gui=bold guifg=#0000ff	 guibg=LightBlue2
+    highlight User4		 gui=bold guifg=#ff0000	 guibg=LightBlue2
+    " bookmarks
+    highlight Cream_ShowMarksHL	 gui=bold guifg=blue	 guibg=lightblue
+    " spell check
+    highlight BadWord		 gui=bold guifg=DarkBlue guibg=#ffdddd
+    " current line
+    highlight DoubleWord	 gui=bold guifg=DarkBlue guibg=#ffeecc
+    highlight CurrentLine	 gui=none		 guibg=#ffffcc
+    highlight CursorLine	 gui=none		 guibg=#ffffcc
+    highlight CursorColumn	 gui=none		 guibg=#ffeedd
+    " email
+    highlight EQuote1			  guifg=#0000cc
+    highlight EQuote2			  guifg=#6666cc
+    highlight EQuote3			  guifg=#9999cc
+    highlight Sig			  guifg=#999999
+
     syntax enable
 
    " }}}1
@@ -397,6 +424,53 @@ elseif	(&term == "xterm")  ||
     highlight CursorIM				    ctermfg=bg		    ctermbg=DarkGrey
     highlight CursorLine	term=reverse				    ctermbg=LightGray
 
+    " Subsection: User Colors {{{2
+    "
+    " Group: Wikis {{{3
+    "
+    highlight Bold	   cterm=bold
+    highlight Code				ctermfg=Blue		ctermbg=LightGray
+    highlight Header1				ctermfg=DarkMagenta	ctermbg=LightGrey
+    highlight Header2				ctermfg=DarkBlue	ctermbg=LightGrey
+    highlight Header3				ctermfg=DarkMagenta	ctermbg=LightGrey
+    highlight Header4				ctermfg=DarkMagenta	ctermbg=LightGrey
+    highlight Header5				ctermfg=DarkMagenta	ctermbg=LightGrey
+    highlight Html				ctermfg=DarkBlue	ctermbg=LightGrey
+    highlight Italic	   cterm=Italic
+    highlight Link				ctermfg=DarkGrey	ctermbg=LightGrey
+    highlight LinkText				ctermfg=DarkBlue	ctermbg=LightGrey
+    highlight OList				ctermfg=DarkCyan
+    highlight Strike	   cterm=undercurl
+    highlight Table				ctermfg=DarkCyan	ctermbg=LightGrey
+    highlight TableColumn			ctermfg=LightMagenta	ctermbg=LightGrey
+    highlight UList				ctermfg=Blue
+    highlight Underline	   cterm=underline
+    "
+    " Group: Cream {{{3
+    "
+    " invisible characters
+    highlight NonText	   cterm=none		ctermfg=LightCyan
+    highlight SpecialKey   cterm=none		ctermfg=LightCyan
+    " statusline
+    highlight User1	   cterm=bold,reverse	ctermfg=LightGrey	ctermbg=lightblue
+    highlight User2	   cterm=bold,reverse	ctermfg=Black		ctermbg=lightblue
+    highlight User3	   cterm=bold,reverse	ctermfg=DarkBlue	ctermbg=lightblue
+    highlight User4	   cterm=bold,reverse	ctermfg=DarkRed		ctermbg=lightblue
+    " bookmarks
+    highlight Cream_ShowMarksHL	 cterm=bold	ctermfg=blue		ctermbg=lightblue
+    " spell check
+    highlight BadWord				ctermfg=black		ctermbg=lightblue
+    " current line
+    highlight DoubleWord			ctermfg=black		ctermbg=lightblue
+    highlight CurrentLine  cterm=reverse	ctermfg=Yellow		ctermbg=Black
+    highlight CursorLine   cterm=reverse	ctermfg=Yellow		ctermbg=Black
+    highlight CursorColumn cterm=reverse	ctermfg=Yellow		ctermbg=Black
+    " email
+    highlight EQuote1				ctermfg=DarkBlue
+    highlight EQuote2				ctermfg=DarkGreen
+    highlight EQuote3				ctermfg=DarkCyan
+    highlight Sig				ctermfg=DarkGrey
+
     syntax enable
 
    " }}}1
@@ -411,7 +485,7 @@ else
 endif
 
 "------------------------------------------------------------------------------
-"   Copyright (C) 2006  Martin Krischik
+"   Copyright (C) 2006-2007 Martin Krischik
 "
 "   Vim is Charityware - see ":help license" or uganda.txt for licence details.
 "------------------------------------------------------------------------------
