@@ -1,16 +1,16 @@
 "-------------------------------------------------------------------------------
 "  Description: Insert modelines
 "   Maintainer: Martin Krischik
-"      $Author: krischik@users.sourceforge.net $
+"      $Author$
 "               Janakiraman .S <prince@india.ti.com>
-"	 $Date: 2007-09-24 13:40:36 +0200 (Mo, 24 Sep 2007) $
-"	   $Id: modelines.vim 29 2007-09-24 11:40:36Z krischik@users.sourceforge.net $
+"	 $Date$
+"	   $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 " Name Of File: plugin/modelines.vim
 " Last Changed: Monday, 09 May 2006
 "      Version: 2.0
-"    $Revision: 29 $
-"     $HeadURL: https://vim-scripts.googlecode.com/svn/trunk/1352%20Modelines%20Bundle/autoload/modelines.vim $
+"    $Revision$
+"     $HeadURL$
 "	 Usage: copy to plugin directory
 "      History: 18.11.2006 MK Bram's suggestion for runtime integration
 "		18.11.2006 MK "set: :" syntax for "/* */" languages   
