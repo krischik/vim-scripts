@@ -1,13 +1,13 @@
 "-------------------------------------------------------------------------------
 "  Description: My personal colors
-"	   $Id: martin_krischik.vim,v 1.1 2007/09/10 09:31:44 krischikm Exp $
+"	   $Id$
 "    Copyright: Copyright (C) 2006 Martin Krischik
 "   Maintainer:	Martin Krischik
-"      $Author: krischikm $
-"	 $Date: 2007/09/10 09:31:44 $
+"      $Author$
+"	 $Date$
 "      Version: 4.0
-"    $Revision: 1.1 $
-"     $HeadURL: https://gnuada.svn.sourceforge.net/svnroot/gnuada/trunk/tools/vim/colors/martin_krischik.vim $
+"    $Revision$
+"     $HeadURL$
 "	  Note:	Tried and Tested for 'builtin_gui', 'xterm' (KDE Konsole)
 "		'vt320'" (OpenVMS) and 'linux' (Linux Console).
 "      History: 16.05.2006 MK Check that all vim 7.0 colors are set
