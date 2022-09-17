@@ -1,0 +1,3 @@
+[submodule "1337 Multi OS Font Plugin"]
+	path = 1337 Multi OS Font Plugin
+	url = https://github.com/krischik/vim-plugin-fonts.git
