@@ -10,3 +10,6 @@
 [submodule "2029 4NT Bundle"]
 	path = 2029 4NT Bundle
 	url = https://github.com/krischik/4NT-Bundle.git
+[submodule "1609 Ada Bundle"]
+	path = 1609 Ada Bundle
+	url = https://github.com/krischik/Ada-Bundle
