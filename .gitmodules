@@ -7,6 +7,6 @@
 [submodule "1714 Tail Bundle"]
 	path = 1714 Tail Bundle
 	url = https://github.com/krischik/Tail-Bundle.git
-[submodule "2029 4NT Bundle "]
-	path = "2029 4NT Bundle "
+[submodule "2029 4NT Bundle"]
+	path = 2029 4NT Bundle
 	url = https://github.com/krischik/4NT-Bundle.git
