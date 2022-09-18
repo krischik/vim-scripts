@@ -1,3 +1,6 @@
 [submodule "1337 Multi OS Font Plugin"]
 	path = 1337 Multi OS Font Plugin
 	url = https://github.com/krischik/vim-plugin-fonts.git
+[submodule "1352 Modelines Bundle"]
+	path = 1352 Modelines Bundle
+	url = https://github.com/krischik/Modelines-Bundle.git
