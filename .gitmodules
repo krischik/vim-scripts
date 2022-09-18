@@ -4,3 +4,6 @@
 [submodule "1352 Modelines Bundle"]
 	path = 1352 Modelines Bundle
 	url = https://github.com/krischik/Modelines-Bundle.git
+[submodule "1714 Tail Bundle"]
+	path = 1714 Tail Bundle
+	url = https://github.com/krischik/Tail-Bundle.git
