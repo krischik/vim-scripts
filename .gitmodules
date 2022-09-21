@@ -16,3 +16,6 @@
 [submodule "1561 Rainbow Parenthsis Bundle"]
 	path = 1561 Rainbow Parenthsis Bundle
 	url = https://github.com/krischik/Rainbow-Parenthesis-Bundle.git
+[submodule "1538 Martin Krischik Color Scheme"]
+	path = 1538 Martin Krischik Color Scheme
+	url = https://github.com/krischik/vim-colors-martin_krischik.git
