@@ -19,3 +19,6 @@
 [submodule "1538 Martin Krischik Color Scheme"]
 	path = 1538 Martin Krischik Color Scheme
 	url = https://github.com/krischik/vim-colors-martin_krischik.git
+[submodule "1537 Numbered Backups"]
+	path = 1537 Numbered Backups
+	url = https://github.com/krischik/vim-plugin-backup.git
