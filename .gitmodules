@@ -22,3 +22,6 @@
 [submodule "1537 Numbered Backups"]
 	path = 1537 Numbered Backups
 	url = https://github.com/krischik/vim-plugin-backup.git
+[submodule "0118 A shell buffer in vim"]
+	path = 0118 A shell buffer in vim
+	url = https://github.com/krischik/vim-shell.git
