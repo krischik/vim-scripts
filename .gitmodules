@@ -25,3 +25,9 @@
 [submodule "0118 A shell buffer in vim"]
 	path = 0118 A shell buffer in vim
 	url = https://github.com/krischik/vim-shell.git
+[submodule "Motif UIL Syntax"]
+	path = Motif UIL Syntax
+	url = https://github.com/krischik/vim-syntax-uil.git
+[submodule "1379 Motif UIL Syntax"]
+	path = 1379 Motif UIL Syntax
+	url = https://github.com/krischik/vim-syntax-uil.git
