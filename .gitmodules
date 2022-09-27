@@ -28,3 +28,6 @@
 [submodule "1379 Motif UIL Syntax"]
 	path = 1379 Motif UIL Syntax
 	url = https://github.com/krischik/vim-uil.git
+[submodule "1719 WLS Mode"]
+	path = 1719 WLS Mode
+	url = https://github.com/krischik/vim-wls
