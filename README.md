@@ -13,7 +13,7 @@ Collection of my Vim scripts as submodules. All scripts are dein compatible.
 | [1561](https://www.vim.org/scripts/script.php?script_id=1561) | [vim-rainbow](https://github.com/krischik/vim-rainbow)    | Rainbow Parenthsis Bundle     | Colors Parenthesis                                                | ✅        |
 | [1609](https://www.vim.org/scripts/script.php?script_id=1609) | [vim-ada](https://github.com/krischik/vim-ada)            | Ada Bundle                    | Complete Ada-Mode                                                 | ✅        |
 | [1714](https://www.vim.org/scripts/script.php?script_id=1714) | [vim-tail](https://github.com/krischik/vim-tail)          | Tail Bundle                   | Yet another tail -f plugin                                        | ❌        |
-| [1714](https://www.vim.org/scripts/script.php?script_id=1719) | [vim-wls](https://github.com/krischik/vim-wls)            | WLS Mode                      | Complete Bea-Weblogic-Mode                                        | ❌        |
+| [1719](https://www.vim.org/scripts/script.php?script_id=1719) | [vim-wls](https://github.com/krischik/vim-wls)            | WLS Mode                      | Complete Bea-Weblogic-Mode                                        | ❌        |
 | [2029](https://www.vim.org/scripts/script.php?script_id=2029) | [vim-btm](https://github.com/krischik/vim-btm)            | 4NT Bundle                    | btm (Batch to Memory - 4NT, TakeCommand Script) filetype bundle   | ✅        |
 | [2029](https://www.vim.org/scripts/script.php?script_id=2029) | [](https://github.com/krischik/)                          | SnipSnap                      | Filetype and Syntax SnipSnap Wiki.                                | ❌        |
 
