@@ -1,27 +1,36 @@
 [submodule "1337 Multi OS Font Plugin"]
 	path = 1337 Multi OS Font Plugin
-	url = https://github.com/krischik/vim-plugin-fonts.git
+	url = https://github.com/krischik/vim-fonts.git
 [submodule "1352 Modelines Bundle"]
 	path = 1352 Modelines Bundle
-	url = https://github.com/krischik/Modelines-Bundle.git
+	url = https://github.com/krischik/vim-modelines.git
 [submodule "1714 Tail Bundle"]
 	path = 1714 Tail Bundle
-	url = https://github.com/krischik/Tail-Bundle.git
+	url = https://github.com/krischik/vim-tail.git
 [submodule "2029 4NT Bundle"]
 	path = 2029 4NT Bundle
-	url = https://github.com/krischik/4NT-Bundle.git
+	url = https://github.com/krischik/vim-btm.git
 [submodule "1609 Ada Bundle"]
 	path = 1609 Ada Bundle
-	url = https://github.com/krischik/Ada-Bundle
+	url = https://github.com/krischik/vim-ada.git
 [submodule "1561 Rainbow Parenthsis Bundle"]
 	path = 1561 Rainbow Parenthsis Bundle
-	url = https://github.com/krischik/Rainbow-Parenthesis-Bundle.git
+	url = https://github.com/krischik/vim-rainbow.git
 [submodule "1538 Martin Krischik Color Scheme"]
 	path = 1538 Martin Krischik Color Scheme
-	url = https://github.com/krischik/vim-colors-martin_krischik.git
+	url = https://github.com/krischik/vim-colors.git
 [submodule "1537 Numbered Backups"]
 	path = 1537 Numbered Backups
-	url = https://github.com/krischik/vim-plugin-backup.git
+	url = https://github.com/krischik/vim-backup.git
 [submodule "0118 A shell buffer in vim"]
 	path = 0118 A shell buffer in vim
 	url = https://github.com/krischik/vim-shell.git
+[submodule "1379 Motif UIL Syntax"]
+	path = 1379 Motif UIL Syntax
+	url = https://github.com/krischik/vim-uil.git
+[submodule "1719 WLS Mode"]
+	path = 1719 WLS Mode
+	url = https://github.com/krischik/vim-wls
+[submodule "1768 SnipSnap"]
+	path = 1768 SnipSnap
+	url = https://github.com/krischik/vim-snipsnap.git
