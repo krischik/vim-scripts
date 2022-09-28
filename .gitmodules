@@ -31,3 +31,6 @@
 [submodule "1719 WLS Mode"]
 	path = 1719 WLS Mode
 	url = https://github.com/krischik/vim-wls
+[submodule "1768 SnipSnap"]
+	path = 1768 SnipSnap
+	url = https://github.com/krischik/vim-snipsnap.git
