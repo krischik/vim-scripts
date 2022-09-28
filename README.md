@@ -14,6 +14,7 @@ Collection of my Vim scripts as submodules. All scripts are dein compatible.
 | [1609](https://www.vim.org/scripts/script.php?script_id=1609) | [vim-ada](https://github.com/krischik/vim-ada)            | Ada Bundle                    | Complete Ada-Mode                                                 | ✅        |
 | [1714](https://www.vim.org/scripts/script.php?script_id=1714) | [vim-tail](https://github.com/krischik/vim-tail)          | Tail Bundle                   | Yet another tail -f plugin                                        | ❌        |
 | [1714](https://www.vim.org/scripts/script.php?script_id=1719) | [vim-wls](https://github.com/krischik/vim-wls)            | WLS Mode                      | Complete Bea-Weblogic-Mode                                        | ❌        |
+| [1719](https://www.vim.org/scripts/script.php?script_id=1719) | [vim-wls](https://github.com/krischik/vim-wls)            | WLS Mode                      | Complete Bea-Weblogic-Mode                                        | ❌        |
 | [1768](https://www.vim.org/scripts/script.php?script_id=1768) | [vim-snipsnap](https://github.com/krischik/vim-snipsnap)  | SnipSnap                      | Filetype and Syntax SnipSnap Wiki.                                | ❌        |
 | [2029](https://www.vim.org/scripts/script.php?script_id=2029) | [vim-btm](https://github.com/krischik/vim-btm)            | 4NT Bundle                    | btm (Batch to Memory - 4NT, TakeCommand Script) filetype bundle   | ✅        |
 
