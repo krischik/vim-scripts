@@ -17,6 +17,7 @@ Collection of my Vim scripts as submodules. All scripts are dein compatible.
 | [1719](https://www.vim.org/scripts/script.php?script_id=1719) | [vim-wls](https://github.com/krischik/vim-wls)            | WLS Mode                      | Complete Bea-Weblogic-Mode                                        | ❌        |
 | [1768](https://www.vim.org/scripts/script.php?script_id=1768) | [vim-snipsnap](https://github.com/krischik/vim-snipsnap)  | SnipSnap                      | Filetype and Syntax SnipSnap Wiki.                                | ❌        |
 | [2029](https://www.vim.org/scripts/script.php?script_id=2029) | [vim-btm](https://github.com/krischik/vim-btm)            | 4NT Bundle                    | btm (Batch to Memory - 4NT, TakeCommand Script) filetype bundle   | ✅        |
+| [6029](https://www.vim.org/scripts/script.php?script_id=6029) | [vim-asm_ca65](https://github.com/krischik/vim-asm_ca65)  | MOS 6502 Assembler            | Vim syntax highlighting for the ca65 assembler                    | ✅        |
 
 # Maintainance:
 
