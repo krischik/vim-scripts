@@ -34,3 +34,9 @@
 [submodule "1768 SnipSnap"]
 	path = 1768 SnipSnap
 	url = https://github.com/krischik/vim-snipsnap.git
+[submodule "6029 MOS 6502 Assembler"]
+	path = 6029 MOS 6502 Assembler
+	url = https://github.com/krischik/vim-asm_ca65.git
+[submodule "6031 FX-602P Bundle"]
+	path = 6031 FX-602P Bundle
+	url = https://github.com/krischik/vim-fx602p.git
