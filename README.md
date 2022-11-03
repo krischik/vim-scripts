@@ -64,12 +64,6 @@ Collection of my Vim scripts as submodules. All scripts are dein compatible.
 | Yet another tail -f plugin
 | ❌
 |-
-| [https://www.vim.org/scripts/script.php?script_id=1719 1714]
-| [https://github.com/krischik/vim-wls vim-wls]
-| WLS Mode
-| Complete Bea-Weblogic-Mode
-| ❌
-|-
 | [https://www.vim.org/scripts/script.php?script_id=1719 1719]
 | [https://github.com/krischik/vim-wls vim-wls]
 | WLS Mode
