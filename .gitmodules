@@ -1,45 +1,45 @@
 [submodule "1337 Multi OS Font Plugin"]
 	path = 1337 Multi OS Font Plugin
-	url = git@github.com:krischik/vim-fonts.git
+	url = https://github.com/krischik/vim-fonts.git
 [submodule "1352 Modelines Bundle"]
 	path = 1352 Modelines Bundle
-	url = git@github.com:krischik/vim-modelines.git
+	url = https://github.com/krischik/vim-modelines.git
 [submodule "1714 Tail Bundle"]
 	path = 1714 Tail Bundle
-	url = git@github.com:krischik/vim-tail.git
+	url = https://github.com/krischik/vim-tail.git
 [submodule "2029 4NT Bundle"]
 	path = 2029 4NT Bundle
-	url = git@github.com:krischik/vim-btm.git
+	url = https://github.com/krischik/vim-btm.git
 [submodule "1609 Ada Bundle"]
 	path = 1609 Ada Bundle
-	url = git@github.com:krischik/vim-ada.git
+	url = https://github.com/krischik/vim-ada.git
 [submodule "1561 Rainbow Parenthsis Bundle"]
 	path = 1561 Rainbow Parenthsis Bundle
-	url = git@github.com:krischik/vim-rainbow.git
+	url = https://github.com/krischik/vim-rainbow.git
 [submodule "1538 Martin Krischik Color Scheme"]
 	path = 1538 Martin Krischik Color Scheme
-	url = git@github.com:krischik/vim-colors.git
+	url = https://github.com/krischik/vim-colors.git
 [submodule "1537 Numbered Backups"]
 	path = 1537 Numbered Backups
-	url = git@github.com:krischik/vim-backup.git
+	url = https://github.com/krischik/vim-backup.git
 [submodule "0118 A shell buffer in vim"]
 	path = 0118 A shell buffer in vim
-	url = git@github.com:krischik/vim-shell.git
+	url = https://github.com/krischik/vim-shell.git
 [submodule "1379 Motif UIL Syntax"]
 	path = 1379 Motif UIL Syntax
-	url = git@github.com:krischik/vim-uil.git
+	url = https://github.com/krischik/vim-uil.git
 [submodule "1719 WLS Mode"]
 	path = 1719 WLS Mode
-	url = git@github.com:krischik/vim-wls
+	url = https://github.com/krischik/vim-wls
 [submodule "1768 SnipSnap"]
 	path = 1768 SnipSnap
-	url = git@github.com:krischik/vim-snipsnap.git
+	url = https://github.com/krischik/vim-snipsnap.git
 [submodule "6029 MOS 6502 Assembler"]
 	path = 6029 MOS 6502 Assembler
-	url = git@github.com:krischik/vim-asm_ca65.git
+	url = https://github.com/krischik/vim-asm_ca65.git
 [submodule "6031 FX-602P Bundle"]
 	path = 6031 FX-602P Bundle
-	url = git@github.com:krischik/vim-fx602p.git
+	url = https://github.com/krischik/vim-fx602p.git
 [submodule "Wiki"]
 	path = Wiki
-	url = git@github.com:krischik/vim-scripts.wiki.git
+	url = https://github.com/krischik/vim-scripts.wiki.git
