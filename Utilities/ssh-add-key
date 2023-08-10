@@ -1,0 +1,21 @@
+#!/bin/echo  usage: typeset -x -f -u 
+############################################################ {{{1 ###########
+#  Copyright © 2015 … 2020 KPT/CPT
+#  Author Martin Krischik «krischik.martin@kpt.ch»
+############################################################ }}}1 ###########
+
+function SSH_Add_Key ()
+{
+    local in_Key="${1}"
+    local Fingerprint=$(ssh-keygen -lf ~/.ssh/${in_Key}  | awk '{print $2}')
+
+    if ! ssh-add -l | ggrep -q ${Fingerprint}; then
+        ssh-add ~/.ssh/${in_Key}
+    fi
+
+    return
+}
+
+############################################################ {{{1 ###########
+# vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 noexpandtab textwidth=0 :
+# vim: set fileformat=unix filetype=zsh fileencoding=utf8 foldmethod=marker :
