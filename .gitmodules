@@ -44,5 +44,5 @@
 	path = Wiki
 	url = https://github.com/krischik/vim-scripts.wiki.git
 [submodule "pmdown"]
-	path = pmdown
+	path = vim-pm2md
 	url = https://github.com/krischik/pmdown.git
