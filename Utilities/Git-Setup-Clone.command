@@ -19,54 +19,42 @@
 setopt No_XTrace
 setopt Err_Exit
 
-git config "credential.helper"  "store"
-git config "push.default"       "current"
-git config "pull.rebase"        "false"
-git config "user.name"          "Martin Krischik"
-git config "user.email"         "krischik@users.sourceforge.net"
+setopt Err_Exit
+setopt No_XTrace
 
-# git checkout --track "remotes/origin/master"
-# git checkout --track "remotes/origin/develop"
+if test ${#} -eq 2; then
+    in_Name="${1-Martin Krischik}"
+    in_Mail="${2-krischik@users.sourceforge.net}"
 
-# git branch --set-upstream-to="remotes/origin/master"            "master"
-# git branch --set-upstream-to="remotes/origin/develop"           "develop"
-
-git flow init || true
-
-git submodule init
-git submodule update
-
-git submodule foreach '
-'
-
-git submodule foreach '
+    git config "user.name"	    "${in_Name}"
+    git config "user.email"	    "${in_Mail}"
     git config "credential.helper"  "store"
-    git config "push.default"       "current"
-    git config "pull.rebase"        "false"
-    git config "user.name"          "Martin Krischik"
-    git config "user.email"         "krischik@users.sourceforge.net"
+    git config "push.default"	    "current"
+    git config "pull.rebase"	    "false"
+    git config "pull.ff"	    "only"
+    git config "merge.ff"	    "false"
+
+    if ! git branch --set-upstream-to="remotes/origin/master" "master"; then
+	git checkout --track "remotes/origin/master"
+    fi
+
+    if ! git branch --set-upstream-to="remotes/origin/develop" "develop"; then
+        if ! git checkout --track "remotes/origin/develop"; then
+            git branch   "develop"
+            git checkout "develop"
+            git push --set-upstream
+        fi
+    fi
+
+    git flow init
+else
+   echo '
+Git-Setup-Clone Name Email
+
+    Branch  User name
+    Branch  User email
 '
-
-# only for the submodules which are not the wiki.
-
-for I in [0-9]* ;do
-    pushd "${I}"
-        git checkout --track "remotes/origin/master"
-        git checkout --track "remotes/origin/develop"
-        git branch --set-upstream-to="remotes/origin/master"            "master"
-        git branch --set-upstream-to="remotes/origin/develop"           "develop"
-        git flow init || true
-
-        git submodule init
-        git submodule update
-
-        git checkout "develop"
-    popd
-done; unset I
-
-pushd "Wiki"
-    git checkout "master"
-popd
+fi
 
 ############################################################ {{{1 ###########
 # vim: set nowrap tabstop=8 shiftwidth=4 softtabstop=4 expandtab :
