@@ -43,3 +43,9 @@
 [submodule "Wiki"]
 	path = Wiki
 	url = https://github.com/krischik/vim-scripts.wiki.git
+[submodule "PmWiki to Markdown Converter"]
+	path = PmWiki to Markdown Converter
+	url = https://github.com/krischik/vim-pm2md.git
+[submodule "Scala to Kotlin Converter"]
+	path = Scala to Kotlin Converter
+	url = https://github.com/krischik/vim-scala2kotlin
